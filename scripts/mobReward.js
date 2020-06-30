@@ -57,7 +57,7 @@ system.listenForEvent("minecraft:entity_death", ({data: eventData}) => {
 	if (deadEntityIdentifier in mobs) {
 		let moneyOld = getBalance(player)
 		updateBalance(player, mobs[deadEntityIdentifier], "add");
-		system.executeCommand(`title "${player.name}" actionbar §Вы заработали §e$${mobs[deadEntityIdentifier]} §fза убийство §6${deadEntity.__identifier__}\n§7Было: §b${moneyOld} §7=> Стало: §b${getBalance(player)}`, () => {});
+		system.executeCommand(`title "${player.name}" actionbar §fВы заработали §e$${mobs[deadEntityIdentifier]} §fза убийство §6${deadEntity.__identifier__}\n§7Было: §b${moneyOld} §7=> Стало: §b${getBalance(player)}`, () => {});
 		//console.log("Player " + player.name + " got $" + mobs[deadEntityIdentifier] + " for killing " + deadEntity.__identifier__);
 		//console.log(moneyOld, getBalance(player))
 	}
